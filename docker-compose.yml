@@ -1,0 +1,57 @@
+name: x-dockerize
+
+# Local build & test
+# Usage:
+#   docker compose build              # build all
+#   docker compose build php-8.5-fpm # build one
+#   docker compose run --rm php-8.5-fpm php -m
+
+services:
+
+  php-8.3-fpm:
+    build:
+      context: php
+      dockerfile: fpm/Dockerfile
+      args:
+        PHP_VERSION: "8.3"
+    image: ghcr.io/x-dockerize/php:8.3-fpm
+
+  php-8.3-cli:
+    build:
+      context: php
+      dockerfile: cli/Dockerfile
+      args:
+        PHP_VERSION: "8.3"
+    image: ghcr.io/x-dockerize/php:8.3-cli
+
+  php-8.4-fpm:
+    build:
+      context: php
+      dockerfile: fpm/Dockerfile
+      args:
+        PHP_VERSION: "8.4"
+    image: ghcr.io/x-dockerize/php:8.4-fpm
+
+  php-8.4-cli:
+    build:
+      context: php
+      dockerfile: cli/Dockerfile
+      args:
+        PHP_VERSION: "8.4"
+    image: ghcr.io/x-dockerize/php:8.4-cli
+
+  php-8.5-fpm:
+    build:
+      context: php
+      dockerfile: fpm/Dockerfile
+      args:
+        PHP_VERSION: "8.5"
+    image: ghcr.io/x-dockerize/php:8.5-fpm
+
+  php-8.5-cli:
+    build:
+      context: php
+      dockerfile: cli/Dockerfile
+      args:
+        PHP_VERSION: "8.5"
+    image: ghcr.io/x-dockerize/php:8.5-cli
